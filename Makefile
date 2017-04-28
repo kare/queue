@@ -1,4 +1,5 @@
 
+.PHONY: lint
 
 lint:
 	golint
