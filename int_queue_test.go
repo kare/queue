@@ -5,7 +5,7 @@ import "testing"
 func TestQueueLen(t *testing.T) {
 	q := NewInt()
 	if !q.IsEmpty() {
-		t.Error("Newly created queue's size should be 0. Got %d.", q.Len())
+		t.Errorf("Newly created queue's size should be 0. Got %d.", q.Len())
 	}
 	q.Enqueue(1)
 	if q.Len() != 1 {
