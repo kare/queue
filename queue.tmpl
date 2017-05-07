@@ -1,0 +1,37 @@
+package queue // import "kkn.fi/queue"
+
+// {{.TypeName}} is a FIFO queue data structure.
+type {{.TypeName}} []{{.Type}}
+
+// New{{.ShortTypeName}} creates an empty {{.Type}} queue.
+func New{{.ShortTypeName}}() *{{.TypeName}} {
+	return &{{.TypeName}}{}
+}
+
+// Enqueue adds a value to queue.
+func (q *{{.TypeName}}) Enqueue(value {{.Type}}) {
+	(*q) = append([]{{.Type}}{value}, (*q)...)
+}
+
+// Dequeue removes the least recently added value.
+func (q *{{.TypeName}}) Dequeue() {{.Type}} {
+	length := len((*q)) - 1
+	value := (*q)[length]
+	(*q) = (*q)[:length]
+	return value
+}
+
+// Peek returns the least recently added value.
+func (q *{{.TypeName}}) Peek() {{.Type}} {
+	return (*q)[len(*q)-1]
+}
+
+// Len returns number of values in the queue.
+func (q *{{.TypeName}}) Len() int {
+	return len(*q)
+}
+
+// IsEmpty returns true if the queue is empty.
+func (q *{{.TypeName}}) IsEmpty() bool {
+	return len(*q) == 0
+}

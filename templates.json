@@ -1,0 +1,87 @@
+[
+    {
+        "ShortTypeName": "String",
+        "Type": "string",
+        "TypeName": "StringQueue"
+    },
+    {
+        "ShortTypeName": "Int",
+        "Type": "int",
+        "TypeName": "IntQueue"
+    },
+    {
+        "ShortTypeName": "Uint",
+        "Type": "uint",
+        "TypeName": "UintQueue"
+    },
+    {
+        "ShortTypeName": "Uint8",
+        "Type": "uint8",
+        "TypeName": "Uint8Queue"
+    },
+    {
+        "ShortTypeName": "Uint16",
+        "Type": "uint16",
+        "TypeName": "Uint16Queue"
+    },
+    {
+        "ShortTypeName": "Uint32",
+        "Type": "uint32",
+        "TypeName": "Uint32Queue"
+    },
+    {
+        "ShortTypeName": "Uint64",
+        "Type": "uint64",
+        "TypeName": "Uint64Queue"
+    },
+    {
+        "ShortTypeName": "Int8",
+        "Type": "int8",
+        "TypeName": "Int8Queue"
+    },
+    {
+        "ShortTypeName": "Int16",
+        "Type": "int16",
+        "TypeName": "Int16Queue"
+    },
+    {
+        "ShortTypeName": "Int32",
+        "Type": "int32",
+        "TypeName": "Int32Queue"
+    },
+    {
+        "ShortTypeName": "Int64",
+        "Type": "int64",
+        "TypeName": "Int64Queue"
+    },
+    {
+        "ShortTypeName": "Float32",
+        "Type": "float32",
+        "TypeName": "Float32Queue"
+    },
+    {
+        "ShortTypeName": "Float64",
+        "Type": "float64",
+        "TypeName": "Float64Queue"
+    },
+    {
+        "ShortTypeName": "Complex64",
+        "Type": "complex64",
+        "TypeName": "Complex64Queue"
+    },
+    {
+        "ShortTypeName": "Complex128",
+        "Type": "complex128",
+        "TypeName": "Complex128Queue"
+    },
+    {
+        "ShortTypeName": "Byte",
+        "Type": "byte",
+        "TypeName": "ByteQueue"
+    },
+    {
+        "ShortTypeName": "Rune",
+        "Type": "rune",
+        "TypeName": "RuneQueue"
+    }
+]
