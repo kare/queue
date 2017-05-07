@@ -1,5 +1,7 @@
 language: go
 go_import_path: kkn.fi/queue
+install:
+    - go get kkn.fi/cmd/gends
 script: go test
 go:
     - 1.8.1
