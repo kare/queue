@@ -2,86 +2,103 @@
     {
         "ShortTypeName": "String",
         "Type": "string",
-        "TypeName": "StringQueue"
+        "TypeName": "StringQueue",
+        "TypeZeroValue": "\"\""
     },
     {
         "ShortTypeName": "Int",
         "Type": "int",
-        "TypeName": "IntQueue"
+        "TypeName": "IntQueue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Uint",
         "Type": "uint",
-        "TypeName": "UintQueue"
+        "TypeName": "UintQueue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Uint8",
         "Type": "uint8",
-        "TypeName": "Uint8Queue"
+        "TypeName": "Uint8Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Uint16",
         "Type": "uint16",
-        "TypeName": "Uint16Queue"
+        "TypeName": "Uint16Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Uint32",
         "Type": "uint32",
-        "TypeName": "Uint32Queue"
+        "TypeName": "Uint32Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Uint64",
         "Type": "uint64",
-        "TypeName": "Uint64Queue"
+        "TypeName": "Uint64Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Int8",
         "Type": "int8",
-        "TypeName": "Int8Queue"
+        "TypeName": "Int8Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Int16",
         "Type": "int16",
-        "TypeName": "Int16Queue"
+        "TypeName": "Int16Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Int32",
         "Type": "int32",
-        "TypeName": "Int32Queue"
+        "TypeName": "Int32Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Int64",
         "Type": "int64",
-        "TypeName": "Int64Queue"
+        "TypeName": "Int64Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Float32",
         "Type": "float32",
-        "TypeName": "Float32Queue"
+        "TypeName": "Float32Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Float64",
         "Type": "float64",
-        "TypeName": "Float64Queue"
+        "TypeName": "Float64Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Complex64",
         "Type": "complex64",
-        "TypeName": "Complex64Queue"
+        "TypeName": "Complex64Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Complex128",
         "Type": "complex128",
-        "TypeName": "Complex128Queue"
+        "TypeName": "Complex128Queue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Byte",
         "Type": "byte",
-        "TypeName": "ByteQueue"
+        "TypeName": "ByteQueue",
+        "TypeZeroValue": "0"
     },
     {
         "ShortTypeName": "Rune",
         "Type": "rune",
-        "TypeName": "RuneQueue"
+        "TypeName": "RuneQueue",
+        "TypeZeroValue": "0"
     }
 ]
