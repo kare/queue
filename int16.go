@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Int16Queue is a FIFO queue data structure.
-type Int16Queue []int16
+// Int16 is a FIFO queue data structure.
+type Int16 []int16
 
 // NewInt16 creates an empty int16 queue.
-func NewInt16() *Int16Queue {
-	return &Int16Queue{}
+func NewInt16() *Int16 {
+	return &Int16{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Int16Queue) Enqueue(value int16) {
+func (q *Int16) Enqueue(value int16) {
 	(*q) = append([]int16{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Int16Queue) Dequeue() (int16, error) {
+func (q *Int16) Dequeue() (int16, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Int16Queue) Dequeue() (int16, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Int16Queue) Peek() (int16, error) {
+func (q *Int16) Peek() (int16, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Int16Queue) Peek() (int16, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Int16Queue) Len() int {
+func (q *Int16) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Int16Queue) IsEmpty() bool {
+func (q *Int16) IsEmpty() bool {
 	return len(*q) == 0
 }

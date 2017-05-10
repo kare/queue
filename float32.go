@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Float32Queue is a FIFO queue data structure.
-type Float32Queue []float32
+// Float32 is a FIFO queue data structure.
+type Float32 []float32
 
 // NewFloat32 creates an empty float32 queue.
-func NewFloat32() *Float32Queue {
-	return &Float32Queue{}
+func NewFloat32() *Float32 {
+	return &Float32{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Float32Queue) Enqueue(value float32) {
+func (q *Float32) Enqueue(value float32) {
 	(*q) = append([]float32{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Float32Queue) Dequeue() (float32, error) {
+func (q *Float32) Dequeue() (float32, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Float32Queue) Dequeue() (float32, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Float32Queue) Peek() (float32, error) {
+func (q *Float32) Peek() (float32, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Float32Queue) Peek() (float32, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Float32Queue) Len() int {
+func (q *Float32) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Float32Queue) IsEmpty() bool {
+func (q *Float32) IsEmpty() bool {
 	return len(*q) == 0
 }

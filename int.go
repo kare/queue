@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// IntQueue is a FIFO queue data structure.
-type IntQueue []int
+// Int is a FIFO queue data structure.
+type Int []int
 
 // NewInt creates an empty int queue.
-func NewInt() *IntQueue {
-	return &IntQueue{}
+func NewInt() *Int {
+	return &Int{}
 }
 
 // Enqueue adds a value to queue.
-func (q *IntQueue) Enqueue(value int) {
+func (q *Int) Enqueue(value int) {
 	(*q) = append([]int{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *IntQueue) Dequeue() (int, error) {
+func (q *Int) Dequeue() (int, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *IntQueue) Dequeue() (int, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *IntQueue) Peek() (int, error) {
+func (q *Int) Peek() (int, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *IntQueue) Peek() (int, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *IntQueue) Len() int {
+func (q *Int) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *IntQueue) IsEmpty() bool {
+func (q *Int) IsEmpty() bool {
 	return len(*q) == 0
 }

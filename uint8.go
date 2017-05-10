@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Uint8Queue is a FIFO queue data structure.
-type Uint8Queue []uint8
+// Uint8 is a FIFO queue data structure.
+type Uint8 []uint8
 
 // NewUint8 creates an empty uint8 queue.
-func NewUint8() *Uint8Queue {
-	return &Uint8Queue{}
+func NewUint8() *Uint8 {
+	return &Uint8{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Uint8Queue) Enqueue(value uint8) {
+func (q *Uint8) Enqueue(value uint8) {
 	(*q) = append([]uint8{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Uint8Queue) Dequeue() (uint8, error) {
+func (q *Uint8) Dequeue() (uint8, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Uint8Queue) Dequeue() (uint8, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Uint8Queue) Peek() (uint8, error) {
+func (q *Uint8) Peek() (uint8, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Uint8Queue) Peek() (uint8, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Uint8Queue) Len() int {
+func (q *Uint8) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Uint8Queue) IsEmpty() bool {
+func (q *Uint8) IsEmpty() bool {
 	return len(*q) == 0
 }

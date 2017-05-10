@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Complex128Queue is a FIFO queue data structure.
-type Complex128Queue []complex128
+// Complex128 is a FIFO queue data structure.
+type Complex128 []complex128
 
 // NewComplex128 creates an empty complex128 queue.
-func NewComplex128() *Complex128Queue {
-	return &Complex128Queue{}
+func NewComplex128() *Complex128 {
+	return &Complex128{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Complex128Queue) Enqueue(value complex128) {
+func (q *Complex128) Enqueue(value complex128) {
 	(*q) = append([]complex128{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Complex128Queue) Dequeue() (complex128, error) {
+func (q *Complex128) Dequeue() (complex128, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Complex128Queue) Dequeue() (complex128, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Complex128Queue) Peek() (complex128, error) {
+func (q *Complex128) Peek() (complex128, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Complex128Queue) Peek() (complex128, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Complex128Queue) Len() int {
+func (q *Complex128) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Complex128Queue) IsEmpty() bool {
+func (q *Complex128) IsEmpty() bool {
 	return len(*q) == 0
 }

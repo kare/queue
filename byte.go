@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// ByteQueue is a FIFO queue data structure.
-type ByteQueue []byte
+// Byte is a FIFO queue data structure.
+type Byte []byte
 
 // NewByte creates an empty byte queue.
-func NewByte() *ByteQueue {
-	return &ByteQueue{}
+func NewByte() *Byte {
+	return &Byte{}
 }
 
 // Enqueue adds a value to queue.
-func (q *ByteQueue) Enqueue(value byte) {
+func (q *Byte) Enqueue(value byte) {
 	(*q) = append([]byte{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *ByteQueue) Dequeue() (byte, error) {
+func (q *Byte) Dequeue() (byte, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *ByteQueue) Dequeue() (byte, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *ByteQueue) Peek() (byte, error) {
+func (q *Byte) Peek() (byte, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *ByteQueue) Peek() (byte, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *ByteQueue) Len() int {
+func (q *Byte) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *ByteQueue) IsEmpty() bool {
+func (q *Byte) IsEmpty() bool {
 	return len(*q) == 0
 }

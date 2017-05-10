@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Uint64Queue is a FIFO queue data structure.
-type Uint64Queue []uint64
+// Uint64 is a FIFO queue data structure.
+type Uint64 []uint64
 
 // NewUint64 creates an empty uint64 queue.
-func NewUint64() *Uint64Queue {
-	return &Uint64Queue{}
+func NewUint64() *Uint64 {
+	return &Uint64{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Uint64Queue) Enqueue(value uint64) {
+func (q *Uint64) Enqueue(value uint64) {
 	(*q) = append([]uint64{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Uint64Queue) Dequeue() (uint64, error) {
+func (q *Uint64) Dequeue() (uint64, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Uint64Queue) Dequeue() (uint64, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Uint64Queue) Peek() (uint64, error) {
+func (q *Uint64) Peek() (uint64, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Uint64Queue) Peek() (uint64, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Uint64Queue) Len() int {
+func (q *Uint64) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Uint64Queue) IsEmpty() bool {
+func (q *Uint64) IsEmpty() bool {
 	return len(*q) == 0
 }

@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Int32Queue is a FIFO queue data structure.
-type Int32Queue []int32
+// Int32 is a FIFO queue data structure.
+type Int32 []int32
 
 // NewInt32 creates an empty int32 queue.
-func NewInt32() *Int32Queue {
-	return &Int32Queue{}
+func NewInt32() *Int32 {
+	return &Int32{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Int32Queue) Enqueue(value int32) {
+func (q *Int32) Enqueue(value int32) {
 	(*q) = append([]int32{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Int32Queue) Dequeue() (int32, error) {
+func (q *Int32) Dequeue() (int32, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Int32Queue) Dequeue() (int32, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Int32Queue) Peek() (int32, error) {
+func (q *Int32) Peek() (int32, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Int32Queue) Peek() (int32, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Int32Queue) Len() int {
+func (q *Int32) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Int32Queue) IsEmpty() bool {
+func (q *Int32) IsEmpty() bool {
 	return len(*q) == 0
 }

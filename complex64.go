@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// Complex64Queue is a FIFO queue data structure.
-type Complex64Queue []complex64
+// Complex64 is a FIFO queue data structure.
+type Complex64 []complex64
 
 // NewComplex64 creates an empty complex64 queue.
-func NewComplex64() *Complex64Queue {
-	return &Complex64Queue{}
+func NewComplex64() *Complex64 {
+	return &Complex64{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Complex64Queue) Enqueue(value complex64) {
+func (q *Complex64) Enqueue(value complex64) {
 	(*q) = append([]complex64{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Complex64Queue) Dequeue() (complex64, error) {
+func (q *Complex64) Dequeue() (complex64, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *Complex64Queue) Dequeue() (complex64, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Complex64Queue) Peek() (complex64, error) {
+func (q *Complex64) Peek() (complex64, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *Complex64Queue) Peek() (complex64, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *Complex64Queue) Len() int {
+func (q *Complex64) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *Complex64Queue) IsEmpty() bool {
+func (q *Complex64) IsEmpty() bool {
 	return len(*q) == 0
 }

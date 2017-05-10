@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// StringQueue is a FIFO queue data structure.
-type StringQueue []string
+// String is a FIFO queue data structure.
+type String []string
 
 // NewString creates an empty string queue.
-func NewString() *StringQueue {
-	return &StringQueue{}
+func NewString() *String {
+	return &String{}
 }
 
 // Enqueue adds a value to queue.
-func (q *StringQueue) Enqueue(value string) {
+func (q *String) Enqueue(value string) {
 	(*q) = append([]string{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *StringQueue) Dequeue() (string, error) {
+func (q *String) Dequeue() (string, error) {
 	if len(*q) == 0 {
 		return "", ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *StringQueue) Dequeue() (string, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *StringQueue) Peek() (string, error) {
+func (q *String) Peek() (string, error) {
 	if len(*q) == 0 {
 		return "", ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *StringQueue) Peek() (string, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *StringQueue) Len() int {
+func (q *String) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *StringQueue) IsEmpty() bool {
+func (q *String) IsEmpty() bool {
 	return len(*q) == 0
 }

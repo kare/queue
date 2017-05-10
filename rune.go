@@ -2,22 +2,22 @@
 
 package queue // import "kkn.fi/queue"
 
-// RuneQueue is a FIFO queue data structure.
-type RuneQueue []rune
+// Rune is a FIFO queue data structure.
+type Rune []rune
 
 // NewRune creates an empty rune queue.
-func NewRune() *RuneQueue {
-	return &RuneQueue{}
+func NewRune() *Rune {
+	return &Rune{}
 }
 
 // Enqueue adds a value to queue.
-func (q *RuneQueue) Enqueue(value rune) {
+func (q *Rune) Enqueue(value rune) {
 	(*q) = append([]rune{value}, (*q)...)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *RuneQueue) Dequeue() (rune, error) {
+func (q *Rune) Dequeue() (rune, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -29,7 +29,7 @@ func (q *RuneQueue) Dequeue() (rune, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *RuneQueue) Peek() (rune, error) {
+func (q *Rune) Peek() (rune, error) {
 	if len(*q) == 0 {
 		return 0, ErrEmptyQueue
 	}
@@ -37,11 +37,11 @@ func (q *RuneQueue) Peek() (rune, error) {
 }
 
 // Len returns number of values in the queue.
-func (q *RuneQueue) Len() int {
+func (q *Rune) Len() int {
 	return len(*q)
 }
 
 // IsEmpty returns true if the queue is empty.
-func (q *RuneQueue) IsEmpty() bool {
+func (q *Rune) IsEmpty() bool {
 	return len(*q) == 0
 }
