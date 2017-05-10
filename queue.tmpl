@@ -5,8 +5,8 @@ package queue // import "kkn.fi/queue"
 // {{.TypeName}} is a FIFO queue data structure.
 type {{.TypeName}} []{{.Type}}
 
-// New{{.ShortTypeName}} creates an empty {{.Type}} queue.
-func New{{.ShortTypeName}}() *{{.TypeName}} {
+// New{{.TypeName}} creates an empty {{.Type}} queue.
+func New{{.TypeName}}() *{{.TypeName}} {
 	return &{{.TypeName}}{}
 }
 
