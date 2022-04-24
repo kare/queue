@@ -1,7 +1,7 @@
 
 # Queue
 
-[![GoDoc](https://godoc.org/kkn.fi/queue?status.svg)](https://godoc.org/kkn.fi/queue)
+[![GoDoc](https://pkg.go.dev/badge/kkn.fi/queue)](https://pkg.go.dev/kkn.fi/queue)
 
 ## License
 
