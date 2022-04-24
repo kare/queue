@@ -21,11 +21,12 @@ func (q *Q[T]) Enqueue(value T) {
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
 func (q *Q[T]) Dequeue() (T, error) {
+	var zero T
 	if len(*q) == 0 {
-		var zero T
 		return zero, ErrEmptyQueue
 	}
 	value := (*q)[0]
+	(*q)[0] = zero
 	(*q) = (*q)[1:]
 	return value, nil
 }
