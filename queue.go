@@ -50,3 +50,9 @@ func (q *Q[_]) Len() int {
 func (q *Q[_]) IsEmpty() bool {
 	return len(*q) == 0
 }
+
+// Slice returns the queue values as a slice.
+func (q *Q[T]) Slice() []T {
+	r := make([]T, 0, len(*q))
+	return append(r, []T(*q)...)
+}

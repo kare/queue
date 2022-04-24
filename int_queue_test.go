@@ -1,6 +1,9 @@
 package queue
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestQueue(t *testing.T) {
 	q := New[int]()
@@ -60,5 +63,17 @@ func TestQueuePeekEmpty(t *testing.T) {
 	}
 	if err.Error() != "queue is empty" {
 		t.Errorf("expected error queue is empty, got '%v'", err.Error())
+	}
+}
+
+func TestSlice(t *testing.T) {
+	q := New[int]()
+	q.Enqueue(1)
+	q.Enqueue(2)
+	q.Enqueue(3)
+	actual := q.Slice()
+	expected := []int{3, 2, 1}
+	if !reflect.DeepEqual(actual, expected) {
+		t.Errorf("Expected %v, got %v", expected, actual)
 	}
 }
