@@ -15,7 +15,7 @@ func New[T any]() *Q[T] {
 
 // Enqueue adds a value to queue.
 func (q *Q[T]) Enqueue(value T) {
-	(*q) = append([]T{value}, (*q)...)
+	(*q) = append(*q, value)
 }
 
 // Dequeue removes the least recently added value.
@@ -25,9 +25,8 @@ func (q *Q[T]) Dequeue() (T, error) {
 		var zero T
 		return zero, ErrEmptyQueue
 	}
-	length := len(*q) - 1
-	value := (*q)[length]
-	(*q) = (*q)[:length]
+	value := (*q)[0]
+	(*q) = (*q)[1:]
 	return value, nil
 }
 
@@ -38,7 +37,7 @@ func (q *Q[T]) Peek() (T, error) {
 		var zero T
 		return zero, ErrEmptyQueue
 	}
-	return (*q)[len(*q)-1], nil
+	return (*q)[0], nil
 }
 
 // Len returns number of values in the queue.

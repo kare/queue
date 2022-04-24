@@ -72,7 +72,7 @@ func TestSlice(t *testing.T) {
 	q.Enqueue(2)
 	q.Enqueue(3)
 	actual := q.Slice()
-	expected := []int{3, 2, 1}
+	expected := []int{1, 2, 3}
 	if !reflect.DeepEqual(actual, expected) {
 		t.Errorf("Expected %v, got %v", expected, actual)
 	}
