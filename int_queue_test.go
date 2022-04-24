@@ -3,7 +3,7 @@ package queue
 import "testing"
 
 func TestQueue(t *testing.T) {
-	q := NewInt()
+	q := New[int]()
 	if !q.IsEmpty() {
 		t.Errorf("created queue's size should be 0, got %d", q.Len())
 	}
@@ -29,7 +29,7 @@ func TestQueue(t *testing.T) {
 }
 
 func TestQueueDequeueEmpty(t *testing.T) {
-	q := NewInt()
+	q := New[int]()
 	zero, err := q.Dequeue()
 	if zero != 0 {
 		t.Errorf("expected 0, got %d", zero)
@@ -40,7 +40,7 @@ func TestQueueDequeueEmpty(t *testing.T) {
 }
 
 func TestQueuePeekValue(t *testing.T) {
-	q := NewInt()
+	q := New[int]()
 	q.Enqueue(1)
 	q.Enqueue(2)
 	one, err := q.Peek()
@@ -53,7 +53,7 @@ func TestQueuePeekValue(t *testing.T) {
 }
 
 func TestQueuePeekEmpty(t *testing.T) {
-	q := NewInt()
+	q := New[int]()
 	zero, err := q.Peek()
 	if zero != 0 {
 		t.Errorf("expected peek to return zero value, got %d", zero)
