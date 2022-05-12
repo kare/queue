@@ -6,22 +6,22 @@ import "errors"
 var ErrEmptyQueue = errors.New("queue is empty")
 
 // Q is a generic FIFO queue data structure.
-type Q[T any] []T
+type Q[E any] []E
 
 // New creates an empty queue.
-func New[T any]() *Q[T] {
-	return &Q[T]{}
+func New[E any]() *Q[E] {
+	return &Q[E]{}
 }
 
 // Enqueue adds a value to queue.
-func (q *Q[T]) Enqueue(value T) {
+func (q *Q[E]) Enqueue(value E) {
 	(*q) = append(*q, value)
 }
 
 // Dequeue removes the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Q[T]) Dequeue() (T, error) {
-	var zero T
+func (q *Q[E]) Dequeue() (E, error) {
+	var zero E
 	if len(*q) == 0 {
 		return zero, ErrEmptyQueue
 	}
@@ -33,9 +33,9 @@ func (q *Q[T]) Dequeue() (T, error) {
 
 // Peek returns the least recently added value.
 // If called on an empty queue, will return zero value and ErrEmptyQueue.
-func (q *Q[T]) Peek() (T, error) {
+func (q *Q[E]) Peek() (E, error) {
 	if len(*q) == 0 {
-		var zero T
+		var zero E
 		return zero, ErrEmptyQueue
 	}
 	return (*q)[0], nil
@@ -52,7 +52,7 @@ func (q *Q[_]) IsEmpty() bool {
 }
 
 // Slice returns a copy of the queue values as a slice.
-func (q *Q[T]) Slice() []T {
-	r := make([]T, 0, len(*q))
-	return append(r, []T(*q)...)
+func (q *Q[E]) Slice() []E {
+	r := make([]E, 0, len(*q))
+	return append(r, []E(*q)...)
 }
