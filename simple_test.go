@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-func TestQueue(t *testing.T) {
-	q := New[int]()
+func TestSimple(t *testing.T) {
+	q := NewSimple[int]()
 	if !q.IsEmpty() {
 		t.Errorf("created queue's size should be 0, got %d", q.Len())
 	}
@@ -31,19 +31,19 @@ func TestQueue(t *testing.T) {
 	}
 }
 
-func TestQueueDequeueEmpty(t *testing.T) {
-	q := New[int]()
+func TestSimpleDequeueEmpty(t *testing.T) {
+	q := NewSimple[int]()
 	zero, err := q.Dequeue()
 	if zero != 0 {
 		t.Errorf("expected 0, got %d", zero)
 	}
-	if err.Error() != "queue is empty" {
+	if err.Error() != "queue: queue is empty" {
 		t.Errorf("expected empty queue, got '%v'", err.Error())
 	}
 }
 
-func TestQueuePeekValue(t *testing.T) {
-	q := New[int]()
+func TestSimplePeekValue(t *testing.T) {
+	q := NewSimple[int]()
 	q.Enqueue(1)
 	q.Enqueue(2)
 	one, err := q.Peek()
@@ -55,19 +55,19 @@ func TestQueuePeekValue(t *testing.T) {
 	}
 }
 
-func TestQueuePeekEmpty(t *testing.T) {
-	q := New[int]()
+func TestSimplePeekEmpty(t *testing.T) {
+	q := NewSimple[int]()
 	zero, err := q.Peek()
 	if zero != 0 {
 		t.Errorf("expected peek to return zero value, got %d", zero)
 	}
-	if err.Error() != "queue is empty" {
+	if err.Error() != "queue: queue is empty" {
 		t.Errorf("expected error queue is empty, got '%v'", err.Error())
 	}
 }
 
-func TestSlice(t *testing.T) {
-	q := New[int]()
+func TestSimpleSlice(t *testing.T) {
+	q := NewSimple[int]()
 	q.Enqueue(1)
 	q.Enqueue(2)
 	q.Enqueue(3)
